@@ -39,7 +39,7 @@ async def check_version():
                 elif remote_parts[i] < local_parts[i]:
                     break
             
-            log('info', f"版本检查: 本地版本 {settings.version['local_version']}, 远程版本 {settings.version['remote_version']}, 有更新: {settings.version['has_update']}")
+            log('info', f"111版本检查: 本地版本 {settings.version['local_version']}, 远程版本 {settings.version['remote_version']}, 有更新: {settings.version['has_update']}")
         else:
             log('warning', f"无法获取远程版本信息，HTTP状态码: {response.status_code}")
     except Exception as e:
