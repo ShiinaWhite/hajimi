@@ -151,7 +151,7 @@ async def aistudio_chat_completions(
     
     
     # 记录请求缓存键信息
-    log('info', f"请求缓存键: {cache_key[:8]}...", 
+    log('info', f"111请求缓存键: {cache_key[:8]}...", 
         extra={'request_type': 'non-stream', 'model': request.model})
     
     # 检查缓存是否存在，如果存在，返回缓存
@@ -166,7 +166,7 @@ async def aistudio_chat_completions(
         # 查找所有使用相同缓存键的活跃任务
         active_task = active_requests_manager.get(pool_key)
         if active_task and not active_task.done():
-            log('info', f"发现相同请求的进行中任务", 
+            log('info', f"222发现相同请求的进行中任务", 
                 extra={'request_type': 'stream' if request.stream else "non-stream", 'model': request.model})
             
             # 等待已有任务完成
