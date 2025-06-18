@@ -282,8 +282,8 @@ def generate_cache_key(chat_request, last_n_messages: int = 65536, is_gemini=Fal
                         
                         h.update(b'image_url:') # 加入类型标识符
                         if image_data.startswith('data:image/'):
-                            # 对于base64图像，使用前32字符作为标识符
-                            h.update(image_data[:256].encode('utf-8'))
+                            # 对于base64图像，使用完整的base64字符串
+                            h.update(image_data.encode('utf-8'))
                         else:
                             h.update(image_data.encode('utf-8'))
 
